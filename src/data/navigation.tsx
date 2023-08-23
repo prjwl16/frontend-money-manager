@@ -24,8 +24,8 @@ export const navRoutes  = [
         header: 'Dashboard',
         subRoutes: [
             {
-                name: 'Dashboard',
-                path: '/',
+                name: 'Insights',
+                path: '/insights',
                 icon: <DashboardIcon width={24} height={24}/>,
             },
             {
