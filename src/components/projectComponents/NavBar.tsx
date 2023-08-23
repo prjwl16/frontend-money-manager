@@ -2,6 +2,7 @@ import React from "react";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar.tsx";
 import {ModeToggle} from "@/components/projectComponents/toggle-theme.tsx";
 import { Separator } from "@/components/ui/separator.tsx"
+import {NavLink} from "react-router-dom";
 
 
 export default function NavBar() {
@@ -9,12 +10,12 @@ export default function NavBar() {
         <header>
             <ul className={"flex justify-between p-1 max-w-screen-xl m-auto "}>
                 {/*LOGO*/}
-                <li className={"flex flex-row items-center gap-2"}>
+                <li className={"flex flex-row items-center gap-2 cursor-pointer"}>
                     <Avatar>
-                        <AvatarImage src="https://github.com/shadcn.png"/>
+                        <AvatarImage src={"public/logo.svg"}/>
                         <AvatarFallback>Logo</AvatarFallback>
                     </Avatar>
-                    <h5>Money</h5>
+                    <h5>MoneyWise</h5>
                 </li>
 
                 {/*EMPTY SPACE*/}

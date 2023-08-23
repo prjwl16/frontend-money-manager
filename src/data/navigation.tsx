@@ -1,6 +1,14 @@
 import React, {ReactNode} from "react";
-import {ActivityLogIcon, DashboardIcon} from "@radix-ui/react-icons";
-import {AirplayIcon, AlarmCheckIcon, AlignCenterIcon, UserPlus2Icon} from "lucide-react";
+import {ActivityLogIcon, DashboardIcon, TextNoneIcon, TrackNextIcon} from "@radix-ui/react-icons";
+import {
+    AirplayIcon,
+    AlarmCheckIcon,
+    AlignCenterIcon,
+    BookIcon,
+    SettingsIcon,
+    StickyNoteIcon,
+    UserPlus2Icon
+} from "lucide-react";
 
 export const IconWrapper: React.FC<{ icon: React.ReactNode; size: number }> = ({ icon, size }) => (
     <div className="icon-wrapper font-thin" style={{ fontSize: size }}>
@@ -21,7 +29,9 @@ export interface NavRouteTypes {
 
 export const navRoutes  = [
     {
-        header: 'Dashboard',
+        header: 'Insights',
+        path: '/insights',
+        icon: <DashboardIcon width={24} height={24}/>,
         subRoutes: [
             {
                 name: 'Insights',
@@ -36,7 +46,9 @@ export const navRoutes  = [
         ],
     },
     {
-        header: 'Add',
+        header: 'Payments',
+        path: '/payments',
+        icon: <TrackNextIcon width={24} height={24}/>,
         subRoutes: [
             {
                 name: 'Add Category',
@@ -44,15 +56,9 @@ export const navRoutes  = [
                 icon: <AirplayIcon width={24} height={24}/>,
             },
             {
-                name: 'Add Sub Category',
-                path: '/add/sub-category',
-                icon: <AlarmCheckIcon width={24} height={24}/>,
-            },
-            {
                 name: 'Add Account',
                 path: '/add/account',
                 icon: <AirplayIcon width={24} height={24}/>,
-
             },
             {
                 name: 'Add Payee',
@@ -64,57 +70,55 @@ export const navRoutes  = [
                 path: '/add/budget',
                 icon: <AlignCenterIcon width={24} height={24}/>,
             },
-            {
-                name: 'Add Goal',
-                path: '/add/goal',
-                icon: <DashboardIcon width={24} height={24}/>,
-            },
-            {
-                name: 'Add Reminder',
-                path: '/add/reminder',
-                icon: <DashboardIcon width={24} height={24}/>,
-            },
-            {
-                name: 'Add Report',
-                path: '/add/report',
-                icon: <DashboardIcon width={24} height={24}/>,
-            },
-            {
-                name: "Add Subscriptions",
-                path: '/add/subscriptions',
-                icon: <DashboardIcon width={24} height={24}/>,
-            }
         ]
     },
 
     {
-        header: 'Show',
+        header: 'Analytics',
+        path: '/add/account',
+        icon: <AirplayIcon width={24} height={24}/>,
         subRoutes: [
             {
                 name: "Show All Transactions",
                 path: '/show/all/transactions',
                 icon: <DashboardIcon width={24} height={24}/>,
             },
-            {
-                name: "Show All Categories",
-                path: '/show/all/categories',
-                icon: <DashboardIcon width={24} height={24}/>,
-            },
-            {
-                name: "Show All Sub Categories",
-                path: '/show/all/sub-categories',
-                icon: <DashboardIcon width={24} height={24}/>,
-            },
-            {
-                name: "Show All Accounts",
-                path: '/show/all/accounts',
-                icon: <DashboardIcon width={24} height={24}/>,
-            },
-            {
-                name: "Show All Payees",
-                path: '/show/all/payees',
-                icon: <DashboardIcon width={24} height={24}/>,
-            },
         ]
     },
+    {
+        header: 'Wallet',
+        path: '/add/account',
+        icon: <UserPlus2Icon width={24} height={24}/>,
+        subRoutes: [
+            {
+                name: "Show All Transactions",
+                path: '/show/all/transactions',
+                icon: <DashboardIcon width={24} height={24}/>,
+            }
+        ]
+    },
+    {
+        header: 'Transactions',
+        path: '/add/transaction',
+        icon: <BookIcon width={24} height={24}/>,
+        subRoutes: [
+            {
+                name: "Show All Transactions",
+                path: '/show/all/transactions',
+                icon: <DashboardIcon width={24} height={24}/>,
+            }
+        ]
+    },
+    {
+        header: 'Settings',
+        path: '/add/account',
+        icon: <SettingsIcon width={24} height={24}/>,
+        subRoutes: [
+            {
+                name: "Show All Transactions",
+                path: '/show/all/transactions',
+                icon: <DashboardIcon width={24} height={24}/>,
+            }
+        ]
+    }
 ]
