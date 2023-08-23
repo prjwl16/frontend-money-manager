@@ -14,7 +14,7 @@ function App() {
                     <Sidebar className={"hidden sm:flex sm:max-w-xs min-w-[200px]"}/>
                     <div className={"flex-1"}>
                         <Routes>
-                            <Route path={"/dashboard"} element={<Dashboard/>}/>
+                            <Route path={"/insights"} element={<Dashboard/>}/>
                             <Route path={"/add/transaction"} element={<Transaction/>}/>
                         </Routes>
                     </div>
