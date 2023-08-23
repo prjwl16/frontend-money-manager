@@ -1,4 +1,4 @@
-import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle,} from "@/components/ui/card";
+import {Card, CardDescription, CardTitle,} from "@/components/ui/card";
 import {TrendingUpIcon} from "lucide-react";
 import React from "react";
 import 'react-circular-progressbar/dist/styles.css';
