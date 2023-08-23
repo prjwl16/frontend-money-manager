@@ -4,7 +4,7 @@ import {cn} from "@/lib/utils.ts";
 import {Link} from "react-router-dom";
 import {IconWrapper, navRoutes, SubRoute} from "@/data/navigation.tsx";
 import {Separator} from "@/components/ui/separator.tsx";
-import {Search} from "@/components/Search.tsx";
+import {Search} from "@/components/projectComponents/Search.tsx";
 
 
 interface RenderRoutesProps {

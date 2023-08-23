@@ -1,6 +1,6 @@
 import React from "react";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar.tsx";
-import {ModeToggle} from "@/components/toggle-theme.tsx";
+import {ModeToggle} from "@/components/projectComponents/toggle-theme.tsx";
 import { Separator } from "@/components/ui/separator.tsx"
 
 

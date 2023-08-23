@@ -25,7 +25,7 @@ export const navRoutes  = [
         subRoutes: [
             {
                 name: 'Dashboard',
-                path: '/',
+                path: '/dashboard',
                 icon: <DashboardIcon width={24} height={24}/>,
             },
             {

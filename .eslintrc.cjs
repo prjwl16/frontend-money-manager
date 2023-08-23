@@ -6,7 +6,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:react/recommended',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs','tailwind.config.js'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'tailwind.config.js', 'src/components/ui/*'],
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
   rules: {

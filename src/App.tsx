@@ -1,8 +1,8 @@
 import React from "react";
-import NavBar from "@/components/NavBar.tsx";
-import Sidebar from "@/components/Sidebar.tsx";
+import NavBar from "@/components/projectComponents/NavBar.tsx";
+import Sidebar from "@/components/projectComponents/Sidebar.tsx";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import TransactionForm from "@/pages/forms/TransactionForm.tsx";
+import Transaction from "@/pages/Transaction.tsx";
 import Dashboard from "@/pages/Dashboard.tsx";
 
 function App() {
@@ -14,11 +14,10 @@ function App() {
                     <Sidebar className={"flex max-w-xs min-w-[200px]"}/>
                     <div>
                         <Routes>
-                            <Route path={"/"} element={<Dashboard/>}/>
-                            <Route path={"/add/transaction"} element={<TransactionForm/>}/>
+                            <Route path={"/dashboard"} element={<Dashboard/>}/>
+                            <Route path={"/add/transaction"} element={<Transaction/>}/>
                         </Routes>
                     </div>
-
                 </BrowserRouter>
             </div>
         </div>
