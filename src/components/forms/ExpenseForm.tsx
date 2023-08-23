@@ -23,8 +23,6 @@ const ExpenseForm = ({form, onSubmit}: transactionFormProps) => {
         console.log("Date changed,", date);
     }
 
-
-
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
@@ -46,7 +44,7 @@ const ExpenseForm = ({form, onSubmit}: transactionFormProps) => {
                                             )}
                                         >
                                             {field.value ? (
-                                                format(field.value, "PPP")
+                                                format(field.value, "PPPp")
                                             ) : (
                                                 <span>Pick a date</span>
                                             )}

@@ -15,8 +15,6 @@ interface RenderRoutesProps {
 const RenderRoutes = ({category}: RenderRoutesProps) => {
 
 
-
-
     return (
         <div className={"w-full"}>
             <Separator className={"mb-2 w-full"}/>
@@ -44,13 +42,12 @@ const Sidebar: React.FC<ClassName> = ({className}) => {
     const [searchState, setOpenState] = React.useState(false);
 
     const handleClick = ()=>{
-        console.log("JHhhhh")
         setOpenState(!searchState);
     }
 
     return (
-        <div className={cn(className, "flex")}>
-            <div className={cn(className, "flex flex-col items-start")}>
+        <div className={cn(className)}>
+            <div className={cn(className, "flex flex-col items-start flex-shrink")}>
                 <button onClick={handleClick}
                     className="inline-flex items-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 relative w-full justify-start text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64">
                     <span className="hidden lg:inline-flex">Search...</span>

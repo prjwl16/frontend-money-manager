@@ -1,7 +1,7 @@
 const Dashboard =()=>{
     return(
-        <div>
-            <h1>Dashboard</h1>
+        <div className={"flex overflow-scroll"}>
+            <h1>lorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem</h1>
         </div>
     );
 }
