@@ -1,11 +1,8 @@
-import React from "react";
-import {ClassName} from "@/types/className.ts";
+import React from 'react'
+import { ClassName } from '@/types/className.ts'
 
-
-const Main: React.FC<ClassName>  = () =>{
-    return (<>
-
-    </>)
+const Main: React.FC<ClassName> = () => {
+  return <></>
 }
 
-export default Main;
+export default Main
