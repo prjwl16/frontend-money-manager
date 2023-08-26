@@ -11,7 +11,7 @@ const transactionForm = z.object({
   date: z.date().default(new Date()),
   place: z.string().max(255).optional(),
   category: z.string().max(255).optional(),
-  tags: z.array(z.string().max(255)).optional(), //TODO Add later
+  tags: z.array(z.string().max(255)).optional(), // TODO Add later
 })
 
 type transactionFormTypeZod = z.infer<typeof transactionForm>
