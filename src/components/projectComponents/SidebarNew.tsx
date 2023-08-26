@@ -16,21 +16,14 @@ const SidebarNew: React.FC<ClassName> = ({ className }) => {
   }
 
   return (
-    <div
-      className={cn(
-        className,
-        'hidden sm:flex items-center justify-evenly py-12 flex-col border-r',
-      )}
-    >
+    <div className={cn(className, 'hidden sm:flex items-center justify-evenly py-12 flex-col border-r')}>
       <div className={'flex flex-col gap-12'}>
         {navRoutes.map((route, key) => {
           return (
             <NavLink
               key={key}
               to={route.path}
-              className={({ isActive }) =>
-                isActive ? 'flex gap-4 text-red-700 dark:text-purple-300' : 'flex gap-4'
-              }
+              className={({ isActive }) => (isActive ? 'flex gap-4 text-red-700 dark:text-purple-300' : 'flex gap-4')}
             >
               <IconWrapper icon={route.icon} size={24} />
               <p>{route.header}</p>

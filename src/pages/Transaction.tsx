@@ -4,16 +4,10 @@ import ExpenseForm from '@/components/forms/ExpenseForm.tsx'
 import * as z from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import {
-  transactionForm,
-  TransactionFormType,
-  transactionFormTypeZod,
-} from '@/types/transactionForm.ts'
+import { transactionForm, TransactionFormType, transactionFormTypeZod } from '@/types/transactionForm.ts'
 
 export default function Transaction() {
-  const [type, setType] = React.useState<'expense' | 'income' | 'subscription' | 'transfer'>(
-    'expense',
-  )
+  const [type, setType] = React.useState<'expense' | 'income' | 'subscription' | 'transfer'>('expense')
 
   const defaultValues: Partial<transactionFormTypeZod> = {
     type: 'INCOME',

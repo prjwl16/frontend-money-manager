@@ -2,8 +2,12 @@ import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { TrendingUpIcon } from 'lucide-react'
 import React from 'react'
 import 'react-circular-progressbar/dist/styles.css'
+import useUserStore from '@/store/userStore.ts'
 
-const Dashboard = () => {
+const Insights = () => {
+  const { userData } = useUserStore()
+  console.log('User: ', userData)
+
   return (
     <div className={'flex flex-col gap-2'}>
       <h1>Insights</h1>
@@ -77,4 +81,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Insights

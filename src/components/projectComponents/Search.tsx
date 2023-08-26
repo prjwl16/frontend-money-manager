@@ -8,18 +8,12 @@ import {
   CommandList,
 } from '@/components/ui/command.tsx'
 
-export function Search({
-  state,
-  setState,
-}: {
-  state: boolean
-  setState: (state: boolean) => void
-}) {
+export function Search({ state, setState }: { state: boolean; setState: (state: boolean) => void }) {
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault()
-        setState(!state) //TODO: Fix this with previous state
+        setState(!state) // TODO: Fix this with previous state
       }
     }
     document.addEventListener('keydown', down)
