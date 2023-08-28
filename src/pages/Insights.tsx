@@ -3,13 +3,22 @@ import { TrendingUpIcon } from 'lucide-react'
 import React from 'react'
 import 'react-circular-progressbar/dist/styles.css'
 import useUserStore from '@/store/userStore.ts'
+import { Button } from '@/components/ui/button.tsx'
 
 const Insights = () => {
   const { userData } = useUserStore()
   console.log('User: ', userData)
 
+  const splitwiseAuth = () => {
+    window.open('http://localhost:3000/oauth/splitwise', '_self')
+  }
+
   return (
     <div className={'flex flex-col gap-2'}>
+      <Button variant='outline' onClick={splitwiseAuth} className={'w-60'}>
+        <img src='/sw.svg' alt='splitwise' className={'w-5 h-5 mr-2'} />
+        Sign in with splitwise
+      </Button>
       <h1>Insights</h1>
       <div className={'flex flex-1 border-cyan-500 w-full flex-row'}>
         <div className={'cards flex gap-4 flex-row flex-wrap'}>

@@ -34,6 +34,11 @@ export const navRoutes = [
     icon: <DashboardIcon width={24} height={24} />,
   },
   {
+    header: 'Transactions',
+    path: '/add/transaction',
+    icon: <BookIcon width={24} height={24} />,
+  },
+  {
     header: 'Payments',
     path: '/payments',
     icon: <TrackNextIcon width={24} height={24} />,
@@ -41,22 +46,17 @@ export const navRoutes = [
 
   {
     header: 'Analytics',
-    path: '/add/account',
+    path: '/analytics',
     icon: <AirplayIcon width={24} height={24} />,
   },
   {
     header: 'Wallet',
-    path: '/add/account',
+    path: '/wallets',
     icon: <UserPlus2Icon width={24} height={24} />,
   },
   {
-    header: 'Transactions',
-    path: '/add/transaction',
-    icon: <BookIcon width={24} height={24} />,
-  },
-  {
     header: 'Settings',
-    path: '/add/account',
+    path: '/settings',
     icon: <SettingsIcon width={24} height={24} />,
   },
 ]
