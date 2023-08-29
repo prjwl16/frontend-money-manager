@@ -12,6 +12,7 @@ const Sign = () => {
   const token = searchParams.get('token') || localStorage.getItem('token')
   if (token) localStorage.setItem('token', token)
   const navigate = useNavigate()
+  const gogleAuthUrl = import.meta.env.VITE_GOOGLE_AUTH_URL
 
   const getAndSetUser = async () => {
     if (token) {
@@ -39,7 +40,7 @@ const Sign = () => {
   }, [])
 
   const googleAuth = () => {
-    window.open('http://localhost:3000/oauth/google', '_self')
+    window.open(gogleAuthUrl, '_self')
   }
 
   return (
