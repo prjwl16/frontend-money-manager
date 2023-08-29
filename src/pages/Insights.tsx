@@ -83,6 +83,139 @@ const Insights = () => {
               </div>
             </div>
           </Card>
+
+          <Card className={'min-w-[350px]'}>
+            <div className={'flex justify-between items-center p-4'}>
+              <div className={'flex flex-col gap-6'}>
+                <CardDescription>Income</CardDescription>
+                <CardTitle className={'font-thin'}> $4,980 </CardTitle>
+                <span className={'flex gap-2 justify-start'}>
+                  <TrendingUpIcon />
+                  <p className={'text-purple-300'}>Per month in 23&rsquo;</p>
+                </span>
+              </div>
+            </div>
+          </Card>
+          <Card className={'min-w-[350px]'}>
+            <div className={'flex justify-between items-center p-4'}>
+              <div className={'flex flex-col gap-6'}>
+                <CardDescription>Income</CardDescription>
+                <CardTitle className={'font-thin'}> $4,980 </CardTitle>
+                <span className={'flex gap-2 justify-start'}>
+                  <TrendingUpIcon />
+                  <p className={'text-purple-300'}>Per month in 23&rsquo;</p>
+                </span>
+              </div>
+            </div>
+          </Card>
+          <Card className={'min-w-[350px]'}>
+            <div className={'flex justify-between items-center p-4'}>
+              <div className={'flex flex-col gap-6'}>
+                <CardDescription>Income</CardDescription>
+                <CardTitle className={'font-thin'}> $4,980 </CardTitle>
+                <span className={'flex gap-2 justify-start'}>
+                  <TrendingUpIcon />
+                  <p className={'text-purple-300'}>Per month in 23&rsquo;</p>
+                </span>
+              </div>
+            </div>
+          </Card>
+          <Card className={'min-w-[350px]'}>
+            <div className={'flex justify-between items-center p-4'}>
+              <div className={'flex flex-col gap-6'}>
+                <CardDescription>Income</CardDescription>
+                <CardTitle className={'font-thin'}> $4,980 </CardTitle>
+                <span className={'flex gap-2 justify-start'}>
+                  <TrendingUpIcon />
+                  <p className={'text-purple-300'}>Per month in 23&rsquo;</p>
+                </span>
+              </div>
+            </div>
+          </Card>
+          <Card className={'min-w-[350px]'}>
+            <div className={'flex justify-between items-center p-4'}>
+              <div className={'flex flex-col gap-6'}>
+                <CardDescription>Income</CardDescription>
+                <CardTitle className={'font-thin'}> $4,980 </CardTitle>
+                <span className={'flex gap-2 justify-start'}>
+                  <TrendingUpIcon />
+                  <p className={'text-purple-300'}>Per month in 23&rsquo;</p>
+                </span>
+              </div>
+            </div>
+          </Card>
+          <Card className={'min-w-[350px]'}>
+            <div className={'flex justify-between items-center p-4'}>
+              <div className={'flex flex-col gap-6'}>
+                <CardDescription>Income</CardDescription>
+                <CardTitle className={'font-thin'}> $4,980 </CardTitle>
+                <span className={'flex gap-2 justify-start'}>
+                  <TrendingUpIcon />
+                  <p className={'text-purple-300'}>Per month in 23&rsquo;</p>
+                </span>
+              </div>
+            </div>
+          </Card>
+          <Card className={'min-w-[350px]'}>
+            <div className={'flex justify-between items-center p-4'}>
+              <div className={'flex flex-col gap-6'}>
+                <CardDescription>Income</CardDescription>
+                <CardTitle className={'font-thin'}> $4,980 </CardTitle>
+                <span className={'flex gap-2 justify-start'}>
+                  <TrendingUpIcon />
+                  <p className={'text-purple-300'}>Per month in 23&rsquo;</p>
+                </span>
+              </div>
+            </div>
+          </Card>
+          <Card className={'min-w-[350px]'}>
+            <div className={'flex justify-between items-center p-4'}>
+              <div className={'flex flex-col gap-6'}>
+                <CardDescription>Income</CardDescription>
+                <CardTitle className={'font-thin'}> $4,980 </CardTitle>
+                <span className={'flex gap-2 justify-start'}>
+                  <TrendingUpIcon />
+                  <p className={'text-purple-300'}>Per month in 23&rsquo;</p>
+                </span>
+              </div>
+            </div>
+          </Card>
+          <Card className={'min-w-[350px]'}>
+            <div className={'flex justify-between items-center p-4'}>
+              <div className={'flex flex-col gap-6'}>
+                <CardDescription>Income</CardDescription>
+                <CardTitle className={'font-thin'}> $4,980 </CardTitle>
+                <span className={'flex gap-2 justify-start'}>
+                  <TrendingUpIcon />
+                  <p className={'text-purple-300'}>Per month in 23&rsquo;</p>
+                </span>
+              </div>
+            </div>
+          </Card>
+          <Card className={'min-w-[350px]'}>
+            <div className={'flex justify-between items-center p-4'}>
+              <div className={'flex flex-col gap-6'}>
+                <CardDescription>Income</CardDescription>
+                <CardTitle className={'font-thin'}> $4,980 </CardTitle>
+                <span className={'flex gap-2 justify-start'}>
+                  <TrendingUpIcon />
+                  <p className={'text-purple-300'}>Per month in 23&rsquo;</p>
+                </span>
+              </div>
+            </div>
+          </Card>
+          <Card className={'min-w-[350px]'}>
+            <div className={'flex justify-between items-center p-4'}>
+              <div className={'flex flex-col gap-6'}>
+                <CardDescription>Income</CardDescription>
+                <CardTitle className={'font-thin'}> $4,980 </CardTitle>
+                <span className={'flex gap-2 justify-start'}>
+                  <TrendingUpIcon />
+                  <p className={'text-purple-300'}>Per month in 23&rsquo;</p>
+                </span>
+              </div>
+            </div>
+          </Card>
         </div>
         <div className={'border flex-1 w-full'}>reminders</div>
       </div>
