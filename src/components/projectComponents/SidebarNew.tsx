@@ -15,7 +15,7 @@ const SidebarNew: React.FC<ClassName> = ({ className }) => {
   }
 
   return (
-    <div className={cn(className, 'hidden sm:flex items-center justify-evenly py-12 flex-col border-r')}>
+    <div className={cn(className, 'hidden sm:flex items-center justify-evenly py-12 flex-col')}>
       <div className={'flex flex-col gap-12'}>
         {navRoutes.map((route, key) => {
           return (
@@ -29,10 +29,6 @@ const SidebarNew: React.FC<ClassName> = ({ className }) => {
             </NavLink>
           )
         })}
-        <div className={'flex gap-4'}>
-          <LogOut size={24} className={'cursor-pointer'} />
-          <p>Logout</p>
-        </div>
       </div>
       <Search state={searchState} setState={setOpenState} />
     </div>
