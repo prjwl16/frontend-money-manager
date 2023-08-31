@@ -4,6 +4,7 @@ import React from 'react'
 import 'react-circular-progressbar/dist/styles.css'
 import useUserStore from '@/store/userStore.ts'
 import { Button } from '@/components/ui/button.tsx'
+import { Icons } from '@/data/Icons.tsx'
 
 const Insights = () => {
   const { userData } = useUserStore()
@@ -15,9 +16,9 @@ const Insights = () => {
 
   return (
     <div className={'flex flex-col gap-2'}>
-      <Button variant='outline' onClick={splitwiseAuth} className={'w-60'}>
-        <img src='/sw.svg' alt='splitwise' className={'w-5 h-5 mr-2'} />
-        Sign in with splitwise
+      <Button variant='outline' onClick={splitwiseAuth} className={'w-max items-center flex justify-center'}>
+        <Icons.splitwise width={'20px'} height={'20px'} />
+        <p className={'pl-2'}>Connect splitwise</p>
       </Button>
       <h1>Insights</h1>
       <div className={'flex flex-1 border-cyan-500 w-full flex-row'}>
