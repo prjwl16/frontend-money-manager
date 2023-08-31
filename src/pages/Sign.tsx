@@ -3,6 +3,7 @@ import useUserStore from '@/store/userStore.ts'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { fetchUser } from '@/APIs/user.ts'
 import { useEffect } from 'react'
+import { Icons } from '@/data/Icons.tsx'
 
 const Sign = () => {
   const { setUserData, userData } = useUserStore()
@@ -45,8 +46,8 @@ const Sign = () => {
     <div className={'flex'}>
       {!userData?.id ? (
         <Button variant='outline' onClick={googleAuth}>
-          <img src='/google.svg' alt='google' className={'w-5 h-5 mr-2'} />
-          Sign in with google
+          <Icons.google width={'20px'} height={'20px'} />
+          <p className={'pl-2'}>Sign in with google </p>
         </Button>
       ) : null}
     </div>

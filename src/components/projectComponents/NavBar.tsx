@@ -7,6 +7,7 @@ import { ClassName } from '@/types/className.ts'
 import { cn } from '@/lib/utils.ts'
 import { LogOut } from 'lucide-react'
 import { Button } from '@/components/ui/button.tsx'
+import { Icons } from '@/data/Icons.tsx'
 
 const NavBar: React.FC<ClassName> = ({ className }) => {
   const { theme } = useTheme()
@@ -14,11 +15,11 @@ const NavBar: React.FC<ClassName> = ({ className }) => {
   return (
     <div className={cn(className)}>
       <div className={'flex flex-col justify-center items-center sticky'}>
-        <button className={'w-full flex h-14 justify-center items-center'}>
-          <NavLink to={'/'}>
-            <img src={theme === 'dark' ? 'logo3D.png' : 'logo3.png'} className={'w-24'} />
-          </NavLink>
-        </button>
+        <NavLink to={'/'}>
+          <button className={'w-32 flex h-14 justify-center items-center'}>
+            <Icons.logo key={'logo'} fill={theme === 'dark' ? 'white' : 'black'} />
+          </button>
+        </NavLink>
         <SidebarNew className={'flex w-[200px] h-full'} />
         <div className={'flex justify-between items-center '}>
           <ModeToggle />
