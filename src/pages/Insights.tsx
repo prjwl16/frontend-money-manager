@@ -1,17 +1,17 @@
 import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { TrendingUpIcon } from 'lucide-react'
-import React from 'react'
 import 'react-circular-progressbar/dist/styles.css'
 import useUserStore from '@/store/userStore.ts'
 import { Button } from '@/components/ui/button.tsx'
 import { Icons } from '@/data/Icons.tsx'
 
 const Insights = () => {
+  const splitwiseAuthUrl = import.meta.env.VITE_SPLITWISE_AUTH_URL
   const { userData } = useUserStore()
   console.log('User: ', userData)
 
   const splitwiseAuth = () => {
-    window.open('http://localhost:3000/oauth/splitwise', '_self')
+    window.open(splitwiseAuthUrl, '_self')
   }
 
   return (
