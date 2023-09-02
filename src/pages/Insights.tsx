@@ -4,6 +4,7 @@ import 'react-circular-progressbar/dist/styles.css'
 import useUserStore from '@/store/userStore.ts'
 import { Button } from '@/components/ui/button.tsx'
 import { Icons } from '@/data/Icons.tsx'
+import Setup from '@/pages/Setup.tsx'
 
 const Insights = () => {
   const splitwiseAuthUrl = import.meta.env.VITE_SPLITWISE_AUTH_URL
@@ -16,6 +17,7 @@ const Insights = () => {
 
   return (
     <div className={'flex flex-col gap-2'}>
+      <Setup />
       <Button variant='outline' onClick={splitwiseAuth} className={'w-max items-center flex justify-center'}>
         <Icons.splitwise width={'20px'} height={'20px'} />
         <p className={'pl-2'}>Connect splitwise</p>

@@ -4,15 +4,16 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { fetchUser } from '@/APIs/user.ts'
 import { useEffect } from 'react'
 import { Icons } from '@/data/Icons.tsx'
+import store from 'storejs'
 
 const Sign = () => {
   const { setUserData, userData } = useUserStore()
   const location = useLocation()
   const searchParams = new URLSearchParams(location.search)
-  const token = searchParams.get('token') || localStorage.getItem('token')
-  if (token) localStorage.setItem('token', token)
+  const token = searchParams.get('token') || store.get('token')
+  if (token) store.set('token', token)
   const navigate = useNavigate()
-  const gogleAuthUrl = import.meta.env.VITE_GOOGLE_AUTH_URL
+  const googleAuthUrl = import.meta.env.VITE_GOOGLE_AUTH_URL
 
   const getAndSetUser = async () => {
     if (token) {
@@ -25,7 +26,9 @@ const Sign = () => {
         role: data.role,
         firstName: data.firstName,
         lastName: data.lastName,
+        doneSetup: data.doneSetup,
       }
+      console.log('user', user)
       setUserData(user)
       return true
     }
@@ -40,7 +43,7 @@ const Sign = () => {
   }, [])
 
   const googleAuth = () => {
-    window.open(gogleAuthUrl, '_self')
+    window.open(googleAuthUrl, '_self')
   }
 
   return (

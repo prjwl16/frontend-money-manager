@@ -5,6 +5,7 @@ type UserTypes = {
   firstName: string
   lastName: string
   avatar: string
+  doneSetup: boolean
 }
 
 interface UserStoreState {
