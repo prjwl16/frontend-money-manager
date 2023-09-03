@@ -7,13 +7,14 @@ import { Icons } from '@/data/Icons.tsx'
 import store from 'storejs'
 
 const Sign = () => {
-  const { setUserData, userData } = useUserStore()
   const location = useLocation()
   const searchParams = new URLSearchParams(location.search)
   const token = searchParams.get('token') || store.get('token')
   if (token) store.set('token', token)
   const navigate = useNavigate()
   const googleAuthUrl = import.meta.env.VITE_GOOGLE_AUTH_URL
+
+  const user = store.get('user')
 
   const getAndSetUser = async () => {
     if (token) {
@@ -28,14 +29,15 @@ const Sign = () => {
         lastName: data.lastName,
         doneSetup: data.doneSetup,
       }
-      setUserData(user)
+      store.set('user', user)
       return true
     }
     return false
   }
 
   useEffect(() => {
-    if (userData?.id) return navigate('/insights')
+    const user = store.get('user')
+    if (user?.id) return navigate('/insights')
     getAndSetUser().then((shouldRedirect) => {
       if (shouldRedirect) return navigate('/insights')
     })
@@ -47,7 +49,7 @@ const Sign = () => {
 
   return (
     <div className={'flex'}>
-      {!userData?.id ? (
+      {!user?.id ? (
         <Button variant='outline' onClick={googleAuth}>
           <Icons.google width={'20px'} height={'20px'} />
           <p className={'pl-2'}>Sign in with google </p>

@@ -5,6 +5,7 @@ import Sign from '@/pages/Sign.tsx'
 import Insights from '@/pages/Insights.tsx'
 import Transaction from '@/pages/Transaction.tsx'
 import { cn } from '@/lib/utils.ts'
+import { Logout } from '@/components/Logout.tsx'
 
 const Main: React.FC<ClassName> = ({ className }) => {
   return (
@@ -14,6 +15,7 @@ const Main: React.FC<ClassName> = ({ className }) => {
           <Route path={'/'} element={<Sign />} />
           <Route path={'/insights'} element={<Insights />} />
           <Route path={'/add/transaction'} element={<Transaction />} />
+          <Route path={'/logout'} element={<Logout />} />
         </Routes>
       </div>
     </div>

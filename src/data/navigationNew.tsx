@@ -1,14 +1,6 @@
 import React, { ReactNode } from 'react'
-import { ActivityLogIcon, DashboardIcon, TextNoneIcon, TrackNextIcon } from '@radix-ui/react-icons'
-import {
-  AirplayIcon,
-  AlarmCheckIcon,
-  AlignCenterIcon,
-  BookIcon,
-  SettingsIcon,
-  StickyNoteIcon,
-  UserPlus2Icon,
-} from 'lucide-react'
+import { DashboardIcon, TrackNextIcon } from '@radix-ui/react-icons'
+import { AirplayIcon, BookIcon, SettingsIcon, UserPlus2Icon } from 'lucide-react'
 
 export const IconWrapper: React.FC<{ icon: React.ReactNode; size: number }> = ({ icon, size }) => (
   <div className='icon-wrapper font-thin' style={{ fontSize: size }}>
