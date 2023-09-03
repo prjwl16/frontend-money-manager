@@ -28,7 +28,6 @@ const Sign = () => {
         lastName: data.lastName,
         doneSetup: data.doneSetup,
       }
-      console.log('user', user)
       setUserData(user)
       return true
     }

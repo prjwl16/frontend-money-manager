@@ -1,11 +1,8 @@
 import axios from '@/APIs/axios.ts'
-import { ACCOUNT, CATEGORY } from '@/APIs/constants.ts'
-import store from 'storejs'
+import { ACCOUNT } from '@/APIs/constants.ts'
 
-const token = store.get('token')
-const headers = { Authorization: `Bearer ${token}` }
 export const getAccounts = async () => {
-  const { data } = await axios.get(`${ACCOUNT.GET}`, { headers })
+  const { data } = await axios.get(`${ACCOUNT.GET}`)
   if (data.error) {
     console.log('Error fetching category: ', data.error)
     return null
@@ -15,7 +12,7 @@ export const getAccounts = async () => {
 }
 
 export const addAccount = async (accounts: accountTypes[]) => {
-  const { data } = await axios.post(`${ACCOUNT.GET}`, { headers, data: accounts })
+  const { data } = await axios.post(`${ACCOUNT.GET}`, { data: accounts })
   if (data.error) {
     console.log('Error adding accounts: ', data.error)
     return null

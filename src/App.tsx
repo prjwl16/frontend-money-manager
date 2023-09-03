@@ -8,7 +8,8 @@ import { Toaster } from '@/components/ui/toaster.tsx'
 function App() {
   const { setUserData, userData } = useUserStore()
 
-  const setuser = async () => {
+  const setUser = async () => {
+    console.log('Calling User')
     const data = await fetchUser()
     if (!data) return false
     const user: UserTypes = {
@@ -21,13 +22,12 @@ function App() {
       doneSetup: data.doneSetup,
     }
     setUserData(user)
-    console.log('set user data:::::', user)
   }
 
   useEffect(() => {
+    console.log('Inside useEffect')
     if (userData?.id) return
-    setuser()
-    console.log('get user data:::::')
+    setUser()
   })
 
   return (
