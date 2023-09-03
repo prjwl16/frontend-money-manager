@@ -5,10 +5,11 @@ type UserTypes = {
   firstName: string
   lastName: string
   avatar: string
+  doneSetup: boolean
 }
 
 interface UserStoreState {
   userData: UserTypes | null
-  setUserData: (data: UserTypes) => void
+  setUserData: (data: UserTypes | null) => void
   removeUserData: () => void
 }

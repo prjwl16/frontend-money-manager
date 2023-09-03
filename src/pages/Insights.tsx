@@ -1,21 +1,38 @@
 import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { TrendingUpIcon } from 'lucide-react'
 import 'react-circular-progressbar/dist/styles.css'
-import useUserStore from '@/store/userStore.ts'
 import { Button } from '@/components/ui/button.tsx'
 import { Icons } from '@/data/Icons.tsx'
+import Setup from '@/pages/Setup.tsx'
+import { useEffect, useState } from 'react'
+import { fetchUser } from '@/APIs/user.ts'
+import store from 'storejs'
 
 const Insights = () => {
   const splitwiseAuthUrl = import.meta.env.VITE_SPLITWISE_AUTH_URL
-  const { userData } = useUserStore()
-  console.log('User: ', userData)
+  const user = store.get('user')
+  const [openSetup, setOpeState] = useState<boolean>(false)
 
   const splitwiseAuth = () => {
     window.open(splitwiseAuthUrl, '_self')
   }
 
+  useEffect(() => {
+    if (!user) {
+      fetchUser().then((res) => {
+        if (res) {
+          store.set('user', user)
+          if (!res.doneSetup) setOpeState(true)
+        }
+      })
+    } else {
+      if (!user.doneSetup) setOpeState(true)
+    }
+  }, [])
+
   return (
     <div className={'flex flex-col gap-2'}>
+      <Setup setOpenState={setOpeState} openSetup={openSetup} />
       <Button variant='outline' onClick={splitwiseAuth} className={'w-max items-center flex justify-center'}>
         <Icons.splitwise width={'20px'} height={'20px'} />
         <p className={'pl-2'}>Connect splitwise</p>

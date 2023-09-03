@@ -1,4 +1,4 @@
-import { getUser } from '@/APIs'
+import { getUser } from '@/APIs/axios.ts'
 import { useEffect } from 'react'
 
 const Profile = () => {

@@ -1,14 +1,14 @@
-import { getUser } from '@/APIs/index.ts'
+import axios from '@/APIs/axios.ts'
+import { USER } from '@/APIs/constants.ts'
 
 export const fetchUser = async () => {
-  const token = localStorage.getItem('token')
-  const { data } = await getUser({
-    Authorization: 'Bearer ' + token || '',
-  })
+  const { data } = await axios.get(USER.GET)
+
   if (data.error) {
     console.log('Error fetching user: ', data.error)
     return null
   }
+
   const user: UserTypes = {
     id: data.id,
     email: data.email,
@@ -16,6 +16,16 @@ export const fetchUser = async () => {
     role: data.role,
     firstName: data.firstName,
     lastName: data.lastName,
+    doneSetup: data.doneSetup,
   }
   return user
+}
+
+export const markDone = async (payload: any): Promise<UserTypes | boolean> => {
+  const { data } = await axios.patch(USER.SETUP, payload)
+  if (data.error) {
+    console.log('Error marking setup done: ', data.error)
+    return false
+  }
+  return data.data
 }
