@@ -21,11 +21,11 @@ export const fetchUser = async () => {
   return user
 }
 
-export const markDone = async (): Promise<boolean> => {
-  const { data } = await axios.patch(USER.MARKDONE)
+export const markDone = async (payload: any): Promise<UserTypes | boolean> => {
+  const { data } = await axios.patch(USER.SETUP, payload)
   if (data.error) {
     console.log('Error marking setup done: ', data.error)
     return false
   }
-  return true
+  return data.data
 }

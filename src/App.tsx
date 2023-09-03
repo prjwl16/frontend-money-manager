@@ -2,14 +2,11 @@ import React, { useEffect } from 'react'
 import NavBar from '@/components/projectComponents/NavBar.tsx'
 import Main from '@/components/projectComponents/Main.tsx'
 import { fetchUser } from '@/APIs/user.ts'
-import useUserStore from '@/store/userStore.ts'
 import { Toaster } from '@/components/ui/toaster.tsx'
+import store from 'storejs'
 
 function App() {
-  const { setUserData, userData } = useUserStore()
-
   const setUser = async () => {
-    console.log('Calling User')
     const data = await fetchUser()
     if (!data) return false
     const user: UserTypes = {
@@ -21,13 +18,13 @@ function App() {
       lastName: data.lastName,
       doneSetup: data.doneSetup,
     }
-    setUserData(user)
+    return user
   }
 
   useEffect(() => {
-    console.log('Inside useEffect')
-    if (userData?.id) return
-    setUser()
+    setUser().then((res) => {
+      if (res) store.set('user', res)
+    })
   })
 
   return (

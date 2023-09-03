@@ -10,6 +10,6 @@ type UserTypes = {
 
 interface UserStoreState {
   userData: UserTypes | null
-  setUserData: (data: UserTypes) => void
+  setUserData: (data: UserTypes | null) => void
   removeUserData: () => void
 }

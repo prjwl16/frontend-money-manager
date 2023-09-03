@@ -1,69 +1,54 @@
-import React, { useEffect, useState } from 'react'
-import { PickCategories } from '@/components/PickCategories.tsx'
+import React, { useState } from 'react'
 import { PickDefaultAccounts } from '@/components/PickDefaultAccounts.tsx'
 import Stepper from '@/components/reusable/Stepper.tsx'
-import useUserStore from '@/store/userStore.ts'
 import { markDone } from '@/APIs/user.ts'
 import { useToast } from '@/components/ui/use-toast.ts'
-import { ToastAction } from '@/components/ui/toast.tsx'
+import store from 'storejs'
 
-const Setup = () => {
-  const [openSetup, setOpeState] = useState<boolean>(false)
-  const { userData } = useUserStore()
+interface SetupProps {
+  openSetup: boolean
+  setOpenState: (state: boolean) => void
+}
+
+const Setup = (props: SetupProps) => {
   const { toast } = useToast()
+  const { openSetup, setOpenState } = props
+  const [defaultAccount, setDefaultAccount] = useState<string>('HDFC')
+  const [otherAccount, setOtherAccount] = useState<string | boolean>(false)
 
   const handleCloseSetup = (action: number) => {
-    setOpeState(false)
+    const payload = {
+      account: { accountName: otherAccount ? otherAccount : defaultAccount },
+      group: { name: 'Personal', description: 'Personal transactions' },
+    }
     // call API
-    markDone()
-    toast({
-      title: action === 1 ? 'Setup completed' : 'Setup skipped',
-      description: 'You can always change your settings later',
-      action: <ToastAction altText={'close'} />,
-    })
-  }
-
-  // BU
-  // Category
-  const [categories, setCategories] = useState<categoryTypes[]>([])
-  const [selectedCategories, setSelectedCategories] = useState<Set<string>>(new Set())
-
-  const handleSelectCategory = (item: categoryTypes) => {
-    const newSet = new Set(selectedCategories)
-    newSet.add(item.id)
-    setSelectedCategories((prevState) => {
-      const newSet = new Set(prevState)
-      const isDeleted = newSet.delete(item.id)
-      if (isDeleted) return newSet
-      return newSet.add(item.id)
-    })
+    markDone(payload)
+      .then((res) => {
+        toast({
+          title: action === 1 ? 'Setup completed' : 'Setup skipped',
+          description: 'You can always change your settings later',
+        })
+        console.log('response from done: ', res)
+        store.set('user', res)
+      })
+      .catch(() => {
+        toast({
+          title: 'Setup failed',
+          description: 'Failed to setup account',
+        })
+      })
+    setOpenState(false)
   }
 
   // Account
-  const [accounts, setAccounts] = useState<accountTypes[]>([])
-  const [selectedAccount, setSelectedAccount] = useState<accountTypes>()
-
   const steps = [
-    <PickCategories
-      setCategories={setCategories}
-      selectedCategories={selectedCategories}
-      categories={categories}
-      handleClick={handleSelectCategory}
-      key={0}
-    />,
     <PickDefaultAccounts
-      setSelectedAccount={setSelectedAccount}
-      setAccounts={setAccounts}
-      accounts={accounts}
+      defaultAccount={defaultAccount}
+      setDefaultAccount={setDefaultAccount}
       key={1}
+      setOtherAccount={setOtherAccount}
     />,
   ]
-
-  useEffect(() => {
-    if (!userData?.doneSetup) {
-      setOpeState(true)
-    }
-  })
 
   return (
     <div>{openSetup ? <Stepper steps={steps} openSetup={openSetup} handleCloseSetup={handleCloseSetup} /> : null}</div>

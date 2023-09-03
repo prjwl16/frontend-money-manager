@@ -5,7 +5,7 @@ export const USER = {
   POST: `${baseURL}/user`,
   PUT: `${baseURL}/user`,
   DELETE: `${baseURL}/user`,
-  MARKDONE: `${baseURL}/user/mark-done`,
+  SETUP: `${baseURL}/user/setup`,
 }
 export const CATEGORY = {
   GET: `${baseURL}/category`,
