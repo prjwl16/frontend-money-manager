@@ -1,11 +1,6 @@
-import { getUser } from '@/APIs/axios.ts'
 import { useEffect } from 'react'
 
 const Profile = () => {
-  const fetchUser = async () => {
-    // const user = await getUser();
-  }
-
   useEffect(() => {}, [])
 
   return (
