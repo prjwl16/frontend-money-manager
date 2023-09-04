@@ -23,9 +23,11 @@ const NavBar: React.FC<ClassName> = ({ className }) => {
         <SidebarNew className={'flex w-[200px] h-full'} />
         <div className={'flex justify-between items-center '}>
           <ModeToggle />
-          <Button variant={'ghost'} size={'icon'}>
-            <LogOut size={24} className={'cursor-pointer hover:border'} />
-          </Button>
+          <NavLink to={'/logout'}>
+            <Button variant={'ghost'} size={'icon'}>
+              <LogOut size={24} className={'cursor-pointer hover:border'} />
+            </Button>
+          </NavLink>
         </div>
       </div>
     </div>
