@@ -1,24 +1,17 @@
+import store from 'storejs'
 import axios from '@/APIs/axios.ts'
 import { USER } from '@/APIs/constants.ts'
+import { useQuery } from '@tanstack/react-query'
 
 export const fetchUser = async () => {
-  const { data } = await axios.get(USER.GET)
-
-  if (data.error) {
-    console.log('Error fetching user: ', data.error)
-    return null
-  }
-
-  const user: UserTypes = {
-    id: data.id,
-    email: data.email,
-    avatar: data.avatar,
-    role: data.role,
-    firstName: data.firstName,
-    lastName: data.lastName,
-    doneSetup: data.doneSetup,
-  }
+  const { data: user } = await axios.get<UserTypes>(USER.GET)
+  store.set('user', user)
   return user
+}
+
+export const useGetUser = () => {
+  const token = store.get('token')
+  return useQuery(['user'], fetchUser, { enabled: Boolean(token) })
 }
 
 export const markDone = async (payload: any): Promise<UserTypes | boolean> => {

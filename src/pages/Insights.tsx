@@ -4,31 +4,15 @@ import 'react-circular-progressbar/dist/styles.css'
 import { Button } from '@/components/ui/button.tsx'
 import { Icons } from '@/data/Icons.tsx'
 import Setup from '@/pages/Setup.tsx'
-import { useEffect, useState } from 'react'
-import { fetchUser } from '@/APIs/user.ts'
-import store from 'storejs'
+import { useState } from 'react'
 
 const Insights = () => {
   const splitwiseAuthUrl = import.meta.env.VITE_SPLITWISE_AUTH_URL
-  const user = store.get('user')
   const [openSetup, setOpeState] = useState<boolean>(false)
 
   const splitwiseAuth = () => {
     window.open(splitwiseAuthUrl, '_self')
   }
-
-  useEffect(() => {
-    if (!user) {
-      fetchUser().then((res) => {
-        if (res) {
-          store.set('user', user)
-          if (!res.doneSetup) setOpeState(true)
-        }
-      })
-    } else {
-      if (!user.doneSetup) setOpeState(true)
-    }
-  }, [])
 
   return (
     <div className={'flex flex-col gap-2'}>

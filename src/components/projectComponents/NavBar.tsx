@@ -1,16 +1,26 @@
 import React from 'react'
 import { ModeToggle } from '@/components/projectComponents/toggle-theme.tsx'
 import { useTheme } from '@/components/projectComponents/theme-provider.tsx'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import SidebarNew from '@/components/projectComponents/SidebarNew.tsx'
 import { ClassName } from '@/types/className.ts'
 import { cn } from '@/lib/utils.ts'
 import { LogOut } from 'lucide-react'
 import { Button } from '@/components/ui/button.tsx'
 import { Icons } from '@/data/Icons.tsx'
+import store from 'storejs'
+import { useQueryClient } from '@tanstack/react-query'
 
 const NavBar: React.FC<ClassName> = ({ className }) => {
   const { theme } = useTheme()
+  const navigate = useNavigate()
+  const queryClient = useQueryClient()
+
+  const handleLogout = () => {
+    store.clear()
+    queryClient.clear()
+    navigate('/')
+  }
 
   return (
     <div className={cn(className)}>
@@ -23,11 +33,9 @@ const NavBar: React.FC<ClassName> = ({ className }) => {
         <SidebarNew className={'flex w-[200px] h-full'} />
         <div className={'flex justify-between items-center '}>
           <ModeToggle />
-          <NavLink to={'/logout'}>
-            <Button variant={'ghost'} size={'icon'}>
-              <LogOut size={24} className={'cursor-pointer hover:border'} />
-            </Button>
-          </NavLink>
+          <Button variant={'ghost'} size={'icon'} onClick={handleLogout}>
+            <LogOut size={24} className={'cursor-pointer hover:border'} />
+          </Button>
         </div>
       </div>
     </div>
