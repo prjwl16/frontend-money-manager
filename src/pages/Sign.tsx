@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/button.tsx'
-import useUserStore from '@/store/userStore.ts'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { fetchUser } from '@/APIs/user.ts'
 import { useEffect } from 'react'
@@ -13,7 +12,6 @@ const Sign = () => {
   if (token) store.set('token', token)
   const navigate = useNavigate()
   const googleAuthUrl = import.meta.env.VITE_GOOGLE_AUTH_URL
-
   const user = store.get('user')
 
   const getAndSetUser = async () => {

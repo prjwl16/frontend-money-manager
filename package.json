@@ -25,6 +25,7 @@
     "@radix-ui/react-toast": "^1.1.4",
     "@react-buddy/ide-toolbox": "^2.4.0",
     "@react-oauth/google": "^0.11.1",
+    "@tanstack/react-query": "^4.33.0",
     "axios": "^1.4.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
@@ -46,6 +47,7 @@
     "zustand": "^4.4.1"
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^4.34.1",
     "@types/node": "^20.5.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
