@@ -16,7 +16,6 @@ const Sign = () => {
     store.set('token', token)
   }
   const { data: user } = useGetUser()
-  console.log('🐬 ~ Sign ~ user:', user)
 
   useEffect(() => {
     if (user?.id) {
@@ -27,8 +26,6 @@ const Sign = () => {
   const googleAuth = () => {
     window.open(googleAuthUrl, '_self')
   }
-
-  console.count('root')
 
   return (
     <div className={'flex'}>
