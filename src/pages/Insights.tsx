@@ -4,27 +4,19 @@ import 'react-circular-progressbar/dist/styles.css'
 import { Button } from '@/components/ui/button.tsx'
 import { Icons } from '@/data/Icons.tsx'
 import Setup from '@/pages/Setup.tsx'
-import { useEffect, useMemo, useState } from 'react'
-import store from 'storejs'
+import { useState } from 'react'
 
 const Insights = () => {
   const splitwiseAuthUrl = import.meta.env.VITE_SPLITWISE_AUTH_URL
-  const [openSetup, setOpenSetup] = useState<boolean>(false)
-  const user: UserTypes | null = useMemo(() => store.get('user'), [])
+  const [openSetup, setOpeState] = useState<boolean>(false)
 
   const splitwiseAuth = () => {
     window.open(splitwiseAuthUrl, '_self')
   }
 
-  useEffect(() => {
-    if (!user?.doneSetup) {
-      setOpenSetup(true)
-    }
-  }, [])
-
   return (
     <div className={'flex flex-col gap-2'}>
-      <Setup setOpenSetup={setOpenSetup} openSetup={openSetup} />
+      <Setup setOpenState={setOpeState} openSetup={openSetup} />
       <Button variant='outline' onClick={splitwiseAuth} className={'w-max items-center flex justify-center'}>
         <Icons.splitwise width={'20px'} height={'20px'} />
         <p className={'pl-2'}>Connect splitwise</p>
