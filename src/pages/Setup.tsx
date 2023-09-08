@@ -7,12 +7,12 @@ import store from 'storejs'
 
 interface SetupProps {
   openSetup: boolean
-  setOpenState: (state: boolean) => void
+  setOpenSetup: (state: boolean) => void
 }
 
 const Setup = (props: SetupProps) => {
   const { toast } = useToast()
-  const { openSetup, setOpenState } = props
+  const { openSetup, setOpenSetup } = props
   const [defaultAccount, setDefaultAccount] = useState<string>('HDFC')
   const [otherAccount, setOtherAccount] = useState<string | boolean>(false)
 
@@ -28,7 +28,6 @@ const Setup = (props: SetupProps) => {
           title: action === 1 ? 'Setup completed' : 'Setup skipped',
           description: 'You can always change your settings later',
         })
-        console.log('response from done: ', res)
         store.set('user', res)
       })
       .catch(() => {
@@ -37,7 +36,9 @@ const Setup = (props: SetupProps) => {
           description: 'Failed to setup account',
         })
       })
-    setOpenState(false)
+      .finally(() => {
+        setOpenSetup(false)
+      })
   }
 
   // Account
