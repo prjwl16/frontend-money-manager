@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 import store from 'storejs'
 
 const Insights = () => {
-        const splitwiseAuthUrl = import.meta.env.VITE_SPLITWISE_AUTH_URL
+  const splitwiseAuthUrl = import.meta.env.VITE_SPLITWISE_AUTH_URL
   const [openSetup, setOpenSetup] = useState<boolean>(false)
   const [user] = useState<UserTypes | null>(() => store.get('user') || null)
 
