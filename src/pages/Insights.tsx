@@ -5,12 +5,12 @@ import { Button } from '@/components/ui/button.tsx'
 import { Icons } from '@/data/Icons.tsx'
 import Setup from '@/pages/Setup.tsx'
 import { useEffect, useState } from 'react'
-import store from 'storejs'
+import { useUser } from '@/hooks/useUser'
 
 const Insights = () => {
   const splitwiseAuthUrl = import.meta.env.VITE_SPLITWISE_AUTH_URL
   const [openSetup, setOpenSetup] = useState<boolean>(false)
-  const [user] = useState<UserTypes | null>(() => store.get('user') || null)
+  const { user } = useUser()
 
   const splitwiseAuth = () => {
     window.open(splitwiseAuthUrl, '_self')

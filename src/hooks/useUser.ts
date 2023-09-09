@@ -1,11 +1,21 @@
-import { useLocalStorage } from './useLocalStorage'
+import { useState } from 'react'
+import store from 'storejs'
 
 export const useUser = () => {
-  const { store, setStore, clearStore } = useLocalStorage<UserTypes>('user')
+  const [user, setUser] = useState<UserTypes | null>(() => store.get('user') || null)
+
+  const setUserInStore = (user: UserTypes) => {
+    store.set('user', user)
+  }
+
+  const removeUser = () => {
+    store.clear()
+    setUser(null)
+  }
 
   return {
-    user: store,
-    setUser: setStore,
-    removeUser: clearStore,
+    user,
+    setUser: setUserInStore,
+    removeUser,
   }
 }
