@@ -5,7 +5,7 @@ import { Icons } from '@/data/Icons.tsx'
 import store from 'storejs'
 import { useGetUser } from '@/APIs/user'
 
-const Sign = () => {
+const SignIn = () => {
   const { search, state } = useLocation()
   const navigate = useNavigate()
   const googleAuthUrl = import.meta.env.VITE_GOOGLE_AUTH_URL
@@ -39,4 +39,4 @@ const Sign = () => {
   )
 }
 
-export default Sign
+export default SignIn

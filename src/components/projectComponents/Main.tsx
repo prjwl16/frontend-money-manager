@@ -1,7 +1,7 @@
 import React from 'react'
 import { ClassName } from '@/types/className.ts'
 import { Route, Routes } from 'react-router-dom'
-import Sign from '@/pages/Sign.tsx'
+import SignIn from '@/pages/SignIn'
 import Insights from '@/pages/Insights.tsx'
 import Transaction from '@/pages/Transaction.tsx'
 import { cn } from '@/lib/utils.ts'
@@ -17,7 +17,7 @@ const Main: React.FC<ClassName> = ({ className }) => {
             path={'/'}
             element={
               <AuthGuard>
-                <Sign />
+                <SignIn />
               </AuthGuard>
             }
           />
