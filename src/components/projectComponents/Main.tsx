@@ -5,6 +5,7 @@ import Sign from '@/pages/Sign.tsx'
 import Insights from '@/pages/Insights.tsx'
 import Transaction from '@/pages/Transaction.tsx'
 import { cn } from '@/lib/utils.ts'
+import RequireAuth from '@/components/utils/RequireAuth'
 
 const Main: React.FC<ClassName> = ({ className }) => {
   return (
@@ -12,8 +13,22 @@ const Main: React.FC<ClassName> = ({ className }) => {
       <div className={'flex-1 container mt-2'}>
         <Routes>
           <Route path={'/'} element={<Sign />} />
-          <Route path={'/insights'} element={<Insights />} />
-          <Route path={'/add/transaction'} element={<Transaction />} />
+          <Route
+            path={'/insights'}
+            element={
+              <RequireAuth>
+                <Insights />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path={'/add/transaction'}
+            element={
+              <RequireAuth>
+                <Transaction />
+              </RequireAuth>
+            }
+          />
         </Routes>
       </div>
     </div>

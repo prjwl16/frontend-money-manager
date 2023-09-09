@@ -6,10 +6,10 @@ import store from 'storejs'
 import { useGetUser } from '@/APIs/user'
 
 const Sign = () => {
-  const location = useLocation()
+  const { search, state } = useLocation()
   const navigate = useNavigate()
   const googleAuthUrl = import.meta.env.VITE_GOOGLE_AUTH_URL
-  const searchParams = new URLSearchParams(location.search)
+  const searchParams = new URLSearchParams(search)
   const token = searchParams.get('token')
 
   if (token) {
@@ -19,7 +19,7 @@ const Sign = () => {
 
   useEffect(() => {
     if (user?.id) {
-      navigate('/insights')
+      navigate(state?.path || '/insights')
     }
   }, [user])
 
