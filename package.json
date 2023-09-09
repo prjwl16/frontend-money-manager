@@ -13,8 +13,8 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "yarn lint:fix",
-      "yarn format"
+      "bun lint:fix",
+      "bun format"
     ]
   },
   "dependencies": {
