@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { Icons } from '@/data/Icons.tsx'
 import store from 'storejs'
 import { useGetUser } from '@/APIs/user'
+import { ROUTES } from '@/lib/routes'
 
 const SignIn = () => {
   const { search, state } = useLocation()
@@ -19,7 +20,7 @@ const SignIn = () => {
 
   useEffect(() => {
     if (user?.id) {
-      navigate(state?.path || '/insights')
+      navigate(state?.path || ROUTES.DASHBOARD)
     }
   }, [user])
 

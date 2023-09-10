@@ -1,4 +1,5 @@
 import { useUser } from '@/hooks/useUser'
+import { ROUTES } from '@/lib/routes'
 import { Navigate, useLocation } from 'react-router-dom'
 
 interface Props {
@@ -9,7 +10,7 @@ const RequireAuth = ({ children }: Props) => {
   const { user } = useUser()
   const { pathname } = useLocation()
 
-  return user ? children : <Navigate to='/' replace state={{ path: pathname }} />
+  return user ? children : <Navigate to={ROUTES.SIGN_IN} replace state={{ path: pathname }} />
 }
 
 export default RequireAuth

@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import { DashboardIcon, TrackNextIcon } from '@radix-ui/react-icons'
 import { AirplayIcon, BookIcon, SettingsIcon, UserPlus2Icon } from 'lucide-react'
+import { ROUTES } from '@/lib/routes'
 
 export const IconWrapper: React.FC<{ icon: React.ReactNode; size: number }> = ({ icon, size }) => (
   <div className='icon-wrapper font-thin' style={{ fontSize: size }}>
@@ -22,12 +23,12 @@ export interface NavRouteTypes {
 export const navRoutes = [
   {
     header: 'Insights',
-    path: '/insights',
+    path: ROUTES.DASHBOARD,
     icon: <DashboardIcon width={24} height={24} />,
   },
   {
     header: 'Transactions',
-    path: '/add/transaction',
+    path: ROUTES.ADD_TRANSACTION,
     icon: <BookIcon width={24} height={24} />,
   },
   {

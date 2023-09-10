@@ -19,13 +19,13 @@ const NavBar: React.FC<ClassName> = ({ className }) => {
   const handleLogout = () => {
     store.clear()
     queryClient.clear()
-    navigate('/')
+    navigate(ROUTES.SIGN_IN)
   }
 
   return (
     <div className={cn(className)}>
       <div className={'flex flex-col justify-center items-center sticky'}>
-        <NavLink to={'/'}>
+        <NavLink to={ROUTES.SIGN_IN}>
           <button className={'w-32 flex h-14 justify-center items-center'}>
             <Icons.logo key={'logo'} fill={theme === 'dark' ? 'white' : 'black'} />
           </button>
