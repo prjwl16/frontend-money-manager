@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button.tsx'
 import { Icons } from '@/data/Icons.tsx'
 import store from 'storejs'
 import { useQueryClient } from '@tanstack/react-query'
+import { ROUTES } from '@/lib/routes'
 
 const NavBar: React.FC<ClassName> = ({ className }) => {
   const { theme } = useTheme()

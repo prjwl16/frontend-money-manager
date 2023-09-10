@@ -38,6 +38,38 @@ const Main: React.FC<ClassName> = ({ className }) => {
               </RequireAuth>
             }
           />
+          <Route
+            path={ROUTES.PAYMENTS}
+            element={
+              <RequireAuth>
+                <></>
+              </RequireAuth>
+            }
+          />
+          <Route
+            path={ROUTES.ANALYTICS}
+            element={
+              <RequireAuth>
+                <></>
+              </RequireAuth>
+            }
+          />
+          <Route
+            path={ROUTES.WALLETS}
+            element={
+              <RequireAuth>
+                <></>
+              </RequireAuth>
+            }
+          />
+          <Route
+            path={ROUTES.SETTINGS}
+            element={
+              <RequireAuth>
+                <></>
+              </RequireAuth>
+            }
+          />
         </Routes>
       </div>
     </div>
