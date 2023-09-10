@@ -1,4 +1,5 @@
 import { useUser } from '@/hooks/useUser'
+import { ROUTES } from '@/lib/routes'
 import { Navigate } from 'react-router-dom'
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
 const AuthGuard = ({ children }: Props) => {
   const { user } = useUser()
 
-  return user ? <Navigate to={'/insights'} replace /> : children
+  return user ? <Navigate to={ROUTES.DASHBOARD} replace /> : children
 }
 
 export default AuthGuard

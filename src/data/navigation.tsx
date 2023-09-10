@@ -1,14 +1,7 @@
 import React, { ReactNode } from 'react'
-import { ActivityLogIcon, DashboardIcon, TextNoneIcon, TrackNextIcon } from '@radix-ui/react-icons'
-import {
-  AirplayIcon,
-  AlarmCheckIcon,
-  AlignCenterIcon,
-  BookIcon,
-  SettingsIcon,
-  StickyNoteIcon,
-  UserPlus2Icon,
-} from 'lucide-react'
+import { ActivityLogIcon, DashboardIcon, TrackNextIcon } from '@radix-ui/react-icons'
+import { AirplayIcon, AlignCenterIcon, BookIcon, SettingsIcon, UserPlus2Icon } from 'lucide-react'
+import { ROUTES } from '@/lib/routes'
 
 export const IconWrapper: React.FC<{ icon: React.ReactNode; size: number }> = ({ icon, size }) => (
   <div className='icon-wrapper font-thin' style={{ fontSize: size }}>
@@ -30,17 +23,17 @@ export interface NavRouteTypes {
 export const navRoutes = [
   {
     header: 'Insights',
-    path: '/insights',
+    path: ROUTES.DASHBOARD,
     icon: <DashboardIcon width={24} height={24} />,
     subRoutes: [
       {
         name: 'Insights',
-        path: '/insights',
+        path: ROUTES.DASHBOARD,
         icon: <DashboardIcon width={24} height={24} />,
       },
       {
         name: 'Add Transaction',
-        path: '/add/transaction',
+        path: ROUTES.ADD_TRANSACTION,
         icon: <ActivityLogIcon width={24} height={24} />,
       },
     ],
@@ -52,22 +45,22 @@ export const navRoutes = [
     subRoutes: [
       {
         name: 'Add Category',
-        path: '/add/category',
+        path: ROUTES.ADD_CATEGORY,
         icon: <AirplayIcon width={24} height={24} />,
       },
       {
         name: 'Add Account',
-        path: '/add/account',
+        path: ROUTES.ADD_ACCOUNT,
         icon: <AirplayIcon width={24} height={24} />,
       },
       {
         name: 'Add Payee',
-        path: '/add/payee',
+        path: ROUTES.ADD_PAYEE,
         icon: <UserPlus2Icon width={24} height={24} />,
       },
       {
         name: 'Add Budget',
-        path: '/add/budget',
+        path: ROUTES.ADD_BUDGET,
         icon: <AlignCenterIcon width={24} height={24} />,
       },
     ],
@@ -75,48 +68,48 @@ export const navRoutes = [
 
   {
     header: 'Analytics',
-    path: '/add/account',
+    path: ROUTES.ADD_ACCOUNT,
     icon: <AirplayIcon width={24} height={24} />,
     subRoutes: [
       {
         name: 'Show All Transactions',
-        path: '/show/all/transactions',
+        path: ROUTES.SHOW_TRANSACTIONS,
         icon: <DashboardIcon width={24} height={24} />,
       },
     ],
   },
   {
     header: 'Wallet',
-    path: '/add/account',
+    path: ROUTES.ADD_ACCOUNT,
     icon: <UserPlus2Icon width={24} height={24} />,
     subRoutes: [
       {
         name: 'Show All Transactions',
-        path: '/show/all/transactions',
+        path: ROUTES.SHOW_TRANSACTIONS,
         icon: <DashboardIcon width={24} height={24} />,
       },
     ],
   },
   {
     header: 'Transactions',
-    path: '/add/transaction',
+    path: ROUTES.ADD_TRANSACTION,
     icon: <BookIcon width={24} height={24} />,
     subRoutes: [
       {
         name: 'Show All Transactions',
-        path: '/show/all/transactions',
+        path: ROUTES.SHOW_TRANSACTIONS,
         icon: <DashboardIcon width={24} height={24} />,
       },
     ],
   },
   {
     header: 'Settings',
-    path: '/add/account',
+    path: ROUTES.SETTINGS,
     icon: <SettingsIcon width={24} height={24} />,
     subRoutes: [
       {
         name: 'Show All Transactions',
-        path: '/show/all/transactions',
+        path: ROUTES.SHOW_TRANSACTIONS,
         icon: <DashboardIcon width={24} height={24} />,
       },
     ],
