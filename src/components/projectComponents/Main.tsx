@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils.ts'
 import RequireAuth from '@/components/utils/RequireAuth'
 import AuthGuard from '@/components/utils/AuthGuard'
 import { ROUTES } from '@/lib/routes'
+import NotFound from '@/components/not-found'
 
 const Main: React.FC<ClassName> = ({ className }) => {
   return (
@@ -70,7 +71,7 @@ const Main: React.FC<ClassName> = ({ className }) => {
               </RequireAuth>
             }
           />
-          <Route path='*' element={<>Not found</>} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
     </div>
