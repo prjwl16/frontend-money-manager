@@ -70,6 +70,7 @@ const Main: React.FC<ClassName> = ({ className }) => {
               </RequireAuth>
             }
           />
+          <Route path='*' element={<>Not found</>} />
         </Routes>
       </div>
     </div>
