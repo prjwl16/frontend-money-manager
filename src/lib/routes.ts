@@ -1,6 +1,6 @@
 export const ROUTES = {
-  SIGN_IN: '/',
-  DASHBOARD: '/insights',
+  SIGN_IN: '/login',
+  DASHBOARD: '/',
   ADD_TRANSACTION: '/add/transaction',
   ADD_CATEGORY: '/add/category',
   ADD_ACCOUNT: '/add/account',
