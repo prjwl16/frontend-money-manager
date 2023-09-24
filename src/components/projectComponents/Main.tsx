@@ -9,6 +9,7 @@ import RequireAuth from '@/components/utils/RequireAuth'
 import AuthGuard from '@/components/utils/AuthGuard'
 import { ROUTES } from '@/lib/routes'
 import NotFound from '@/components/not-found'
+import TransactionTable from '@/pages/Transactions.tsx'
 
 const Main: React.FC<ClassName> = ({ className }) => {
   return (
@@ -35,7 +36,7 @@ const Main: React.FC<ClassName> = ({ className }) => {
             path={ROUTES.ADD_TRANSACTION}
             element={
               <RequireAuth>
-                <Transaction />
+                <TransactionTable />
               </RequireAuth>
             }
           />

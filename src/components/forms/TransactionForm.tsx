@@ -9,7 +9,7 @@ import { Calendar } from '@/components/ui/calendar.tsx'
 import { cn } from '@/lib/utils.ts'
 import { format } from 'date-fns'
 
-const ExpenseForm = ({ form, onSubmit }: transactionFormProps) => {
+const TransactionForm = ({ form, onSubmit }: transactionFormProps) => {
   const handlerDateChange = (date: string) => {
     console.log('Date changed,', date)
   }
@@ -89,4 +89,4 @@ const ExpenseForm = ({ form, onSubmit }: transactionFormProps) => {
   )
 }
 
-export default ExpenseForm
+export default TransactionForm
