@@ -14,3 +14,11 @@ export const ACCOUNT = {
   GET: `${baseURL}/account`,
   POST: `${baseURL}/account`,
 }
+export const CARDS = {
+  GET_CARDS: `${baseURL}/cards`,
+}
+
+export const TRANSACTION = {
+  GET_TRANSACTIONS: `${baseURL}/transaction`,
+  ADD_TRANSACTION: `${baseURL}/transaction`,
+}
