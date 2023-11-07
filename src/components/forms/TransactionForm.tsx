@@ -3,15 +3,27 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input.tsx'
 import { Button } from '@/components/ui/button.tsx'
 import { transactionFormProps } from '@/types/transactionForm.ts'
-import { CalendarIcon } from 'lucide-react'
+import { CalendarIcon, Repeat } from 'lucide-react'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover.tsx'
 import { Calendar } from '@/components/ui/calendar.tsx'
 import { cn } from '@/lib/utils.ts'
 import { format } from 'date-fns'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu.tsx'
 
 const TransactionForm = ({ form, onSubmit }: transactionFormProps) => {
   const handlerDateChange = (date: string) => {
     console.log('Date changed,', date)
+  }
+
+  function setRepeatInterval(field: any) {
+    console.log('Repeat interval', field.value)
   }
 
   return (
@@ -39,6 +51,28 @@ const TransactionForm = ({ form, onSubmit }: transactionFormProps) => {
                   <Calendar mode='single' selected={field.value} onSelect={field.onChange} initialFocus />
                 </PopoverContent>
               </Popover>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name='recurringPeriod'
+          render={() => (
+            <FormItem>
+              <FormLabel>Repeat</FormLabel>
+              <FormControl>
+                <DropdownMenu>
+                  <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem>Profile</DropdownMenuItem>
+                    <DropdownMenuItem>Billing</DropdownMenuItem>
+                    <DropdownMenuItem>Team</DropdownMenuItem>
+                    <DropdownMenuItem>Subscription</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </FormControl>
               <FormMessage />
             </FormItem>
           )}

@@ -10,6 +10,7 @@ import AuthGuard from '@/components/utils/AuthGuard'
 import { ROUTES } from '@/lib/routes'
 import NotFound from '@/components/not-found'
 import TransactionTable from '@/pages/Transactions.tsx'
+import Payments from '@/pages/Payments.tsx'
 
 const Main: React.FC<ClassName> = ({ className }) => {
   return (
@@ -44,7 +45,7 @@ const Main: React.FC<ClassName> = ({ className }) => {
             path={ROUTES.PAYMENTS}
             element={
               <RequireAuth>
-                <></>
+                <Payments />
               </RequireAuth>
             }
           />

@@ -5,13 +5,18 @@ const transactionForm = z.object({
   type: z.enum(['INCOME', 'EXPENSE', 'SUBSCRIPTION']),
   amount: z.number().min(0, { message: 'Amount is required.' }),
   currency: z.enum(['INR', 'USD']),
-  particular: z.string().min(1, { message: 'Title is required.' }).max(255),
+  title: z.string().min(1, { message: 'Title is required.' }).max(255),
   description: z.string().max(255).optional(),
   account: z.string().min(1, { message: 'Account is required.' }).max(255),
   date: z.date().default(new Date()),
   place: z.string().max(255).optional(),
   category: z.string().max(255).optional(),
   tags: z.array(z.string().max(255)).optional(), // TODO Add later
+  isRecurring: z.boolean().optional(),
+  recurringPeriod: z.enum(['DAILY', 'WEEKLY', 'MONTHLY', 'YEARLY']).optional(),
+  recurringPeriodCount: z.number().min(1).optional(),
+  recurringStartDate: z.date().optional(),
+  recurringEndDate: z.date().optional(),
 })
 
 type transactionFormTypeZod = z.infer<typeof transactionForm>

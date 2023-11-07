@@ -1,10 +1,11 @@
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.tsx'
-import TransactionForm from '@/components/forms/ExpenseForm.tsx'
+
 import * as z from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { transactionForm, transactionFormTypeZod } from '@/types/transactionForm.ts'
+import TransactionForm from '@/components/forms/TransactionForm.tsx'
 
 export default function Transaction() {
   const [type, setType] = React.useState<'expense' | 'income' | 'subscription' | 'transfer'>('expense')
@@ -13,7 +14,7 @@ export default function Transaction() {
     type: 'INCOME',
     amount: 1010,
     currency: 'INR',
-    particular: 'Tomatoes',
+    name: 'Tomatoes',
     account: 'SBI',
     date: new Date(),
   }

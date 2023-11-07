@@ -123,14 +123,10 @@ const TransactionTable = () => {
     // TODO: Add filters
     // TODO: Add sorting
 
-    const response = await axios.post(`${TRANSACTION.GET_TRANSACTIONS}/0`, {
-      currency: 'INR',
-      order: {
-        createdAt: 'desc',
-      },
-    })
+    const response = await axios.get(`${TRANSACTION.GET_TRANSACTIONS}/0`)
     const { data } = await response.data
-    setTransactions(data.transactions)
+    console.log(data)
+    setTransactions(data)
   }
 
   React.useEffect(() => {
