@@ -5,6 +5,7 @@ import Setup from '@/pages/Setup.tsx'
 import { useEffect, useState } from 'react'
 import { useUser } from '@/hooks/useUser'
 import { Separator } from '@/components/ui/separator.tsx'
+import { IncomeExpense } from '@/components/insights/IncomeExpense.tsx'
 
 const Insights = () => {
   const splitwiseAuthUrl = import.meta.env.VITE_SPLITWISE_AUTH_URL
@@ -32,6 +33,9 @@ const Insights = () => {
       <h1 className={'font-thin text-2xl gradient-text w-max'}>Insights</h1>
       <div className={'flex flex-1 w-full flex-row'}>
         <div className={'cards flex gap-4 flex-row flex-wrap w-9/12'}>
+          <Card className={'p-4'}>
+            <IncomeExpense />
+          </Card>
           <Card className={''}>
             <div className={'flex justify-between items-center p-4'}>
               <div className={'flex flex-col gap-6'}>

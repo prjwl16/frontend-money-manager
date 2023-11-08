@@ -125,7 +125,6 @@ const TransactionTable = () => {
 
     const response = await axios.get(`${TRANSACTION.GET_TRANSACTIONS}/0`)
     const { data } = await response.data
-    console.log(data)
     setTransactions(data)
   }
 

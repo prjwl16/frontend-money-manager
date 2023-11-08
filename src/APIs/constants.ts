@@ -21,4 +21,5 @@ export const CARDS = {
 export const TRANSACTION = {
   GET_TRANSACTIONS: `${baseURL}/transaction`,
   ADD_TRANSACTION: `${baseURL}/transaction`,
+  INCOME_EXPENSE: `${baseURL}/transaction/income-expense`,
 }
