@@ -14,7 +14,7 @@ export default function Transaction() {
     type: 'INCOME',
     amount: 1010,
     currency: 'INR',
-    name: 'Tomatoes',
+    title: 'Tomatoes',
     account: 'SBI',
     date: new Date(),
   }

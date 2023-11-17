@@ -33,7 +33,7 @@ const Insights = () => {
       <h1 className={'font-thin text-2xl gradient-text w-max'}>Insights</h1>
       <div className={'flex flex-1 w-full flex-row'}>
         <div className={'cards flex gap-4 flex-row flex-wrap w-9/12'}>
-          <Card className={'p-4'}>
+          <Card className={'p-4 w-96 h-40'}>
             <IncomeExpense />
           </Card>
           <Card className={''}>

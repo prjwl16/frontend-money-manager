@@ -10,6 +10,7 @@ import {
   Line,
   AreaChart,
   Area,
+  ResponsiveContainer,
 } from 'recharts'
 import { useEffect, useState } from 'react'
 import axios from '@/APIs/axios.ts'
@@ -54,13 +55,15 @@ export const IncomeExpense = () => {
     if (!data) getData()
   })
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload.INCOME
       return (
         <TooltipProvider>
           <Tooltip>
-            <p>{data}</p>
+            <p> &#x20B9; {data}</p>
           </Tooltip>
         </TooltipProvider>
       )
@@ -70,10 +73,12 @@ export const IncomeExpense = () => {
   }
 
   return (
-    <>
-      <LineChart width={600} height={100} data={data}>
+    <ResponsiveContainer>
+      <LineChart data={data}>
         <Line type='monotone' dataKey='INCOME' stroke='#8884d8' strokeWidth={2} />
         <XAxis dataKey={'name'} />
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-ignore */}
         <ToolTeep content={<CustomTooltip />} />
       </LineChart>
       {/* <LineChart width={700} height={300} data={data}> */}
@@ -99,6 +104,6 @@ export const IncomeExpense = () => {
       {/*   <Area type='monotone' dataKey='EXPENSE' stroke='#8884d8' fillOpacity={1} fill='url(#colorUv)' /> */}
       {/*   <Area type='monotone' dataKey='INCOME' stroke='#82ca9d' fillOpacity={1} fill='url(#colorPv)' /> */}
       {/* </AreaChart> */}
-    </>
+    </ResponsiveContainer>
   )
 }

@@ -1,9 +1,11 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-nocheck
+
 import React from 'react'
 import { ClassName } from '@/types/className.ts'
 import { Route, Routes } from 'react-router-dom'
 import SignIn from '@/pages/SignIn'
 import Insights from '@/pages/Insights.tsx'
-import Transaction from '@/pages/Transaction.tsx'
 import { cn } from '@/lib/utils.ts'
 import RequireAuth from '@/components/utils/RequireAuth'
 import AuthGuard from '@/components/utils/AuthGuard'

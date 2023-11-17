@@ -11,7 +11,7 @@ const Payments = () => {
     type: 'INCOME',
     amount: 1010,
     currency: 'INR',
-    particular: 'Tomatoes',
+    title: 'Tomatoes',
     account: 'SBI',
     date: new Date(),
     category: 'Groceries',
