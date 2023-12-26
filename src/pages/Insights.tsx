@@ -4,12 +4,14 @@ import 'react-circular-progressbar/dist/styles.css'
 import Setup from '@/pages/Setup.tsx'
 import { useEffect, useState } from 'react'
 import { useUser } from '@/hooks/useUser'
-import { Separator } from '@/components/ui/separator.tsx'
 import { IncomeExpense } from '@/components/insights/IncomeExpense.tsx'
+import { Button } from '@/components/ui/button.tsx'
+import Payment from '@/pages/payment.tsx'
 
 const Insights = () => {
   const splitwiseAuthUrl = import.meta.env.VITE_SPLITWISE_AUTH_URL
   const [openSetup, setOpenSetup] = useState<boolean>(false)
+  const [openPaymentsPage, setOpenPaymentsPage] = useState<boolean>(false)
   const { user } = useUser()
 
   const splitwiseAuth = () => {
@@ -72,6 +74,7 @@ const Insights = () => {
               </div>
             </div>
           </Card>
+          <Button onClick={() => setOpenPaymentsPage(!openPaymentsPage)}>Upgrade</Button>
         </div>
         <Card className={'border flex-1 w-full flex justify-center items-center'}>Reminders</Card>
       </div>
